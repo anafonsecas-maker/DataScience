@@ -139,6 +139,6 @@ GitHub
 
 👥 Autora e Contato
 
-Ana da Fonseca dos Santos — Estudante de Marketing.
+Ana da Fonseca dos Santos e Lais Valeria — Estudante de Marketing.
 
 Observação: Este projeto possui finalidade exclusivamente acadêmica. Os dados utilizados são simulados e não representam informações oficiais ou resultados reais do O Boticário.
