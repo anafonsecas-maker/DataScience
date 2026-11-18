@@ -104,16 +104,19 @@ A implantação será apresentada como uma proposta acadêmica, sem integração
 ├── docs/
 │   ├── dicionario_dados.md
 │   └── metricas_modelo.json
+
 ├── data/
 │   └── campanhas_marketing.csv
 ├── notebooks/
 │   ├── 1_eda/
 │   └── 2_testes_modelagem/
+
 ├── src/
 │   ├── data_prep.py
 │   ├── train_model.py
 │   └── predict.py
 ├── bi/
+
 ├── requirements.txt
 └── README.md
 
