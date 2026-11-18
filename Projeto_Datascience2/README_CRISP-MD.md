@@ -1,86 +1,144 @@
-# 📊 [Nome do Seu Projeto de Dados]
+O Boticário.
+Beauty Marketing Intelligence
 
-> **[Uma frase curta e direta explicando o impacto do projeto. Ex: Modelo preditivo de Churn integrado a um painel analítico para redução de perdas de clientes.]**
+Análise de campanhas de Marketing Digital com Ciência de Dados para identificar oportunidades de melhoria nos investimentos e prever resultados.
 
----
+📌 Visão Geral do Projeto (Metodologia CRISP-DM)
 
-## 📌 Visão Geral do Projeto (Metodologia CRISP-DM)
+Este projeto tem como objetivo aplicar Ciência de Dados ao Marketing Digital, utilizando como estudo de caso o O Boticário.
 
-Este projeto foi desenvolvido seguindo a metodologia **CRISP-DM**, garantindo um ciclo de desenvolvimento estruturado e focado em gerar valor real para o negócio. Combinamos **Ciência de Dados** para modelagem preditiva e **Business Intelligence (BI)** para visualização estratégica dos resultados.
+A proposta é analisar dados de campanhas publicitárias para identificar quais estratégias e canais apresentam melhores resultados, considerando indicadores como investimento, impressões, cliques, conversões e receita.
 
-```text
-       ┌────────────────────────────────────────────────────────┐
-       │                                                        │
-       ▼                                                        │
-┌──────────────┐      ┌──────────────┐      ┌──────────────┐    │
-│ 1. Entendimento     │ 2. Entendimento     │ 3. Preparação│    │
-│    do Negócio│ ───> │    dos Dados │ ───> │    dos Dados │    │
-└──────────────┘      └──────────────┘      └──────────────┘    │
-                                                   │            │
-                                                   ▼            │
-┌──────────────┐      ┌──────────────┐      ┌──────────────┐    │
-│ 6. Implantação      │ 5. Avaliação │ <─── │ 4. Modelagem │    │
-│   (BI e Prod)│ <─── │  (Métricas)  │      │  (Algoritmos)│    │
-└──────────────┘      └──────────────┘      └──────────────┘    │
-       │                                                        │
-       └────────────────────────────────────────────────────────┘
-```
+O desenvolvimento seguirá a metodologia CRISP-DM, que organiza o projeto em seis etapas, desde a compreensão do problema de negócio até a apresentação de uma solução.
 
----
+Serão utilizados dados simulados para fins acadêmicos, pois não temos acesso às informações internas de campanhas do O Boticário.
 
-## 🛠️ Ciclo de Vida do Projeto (Fases do CRISP-DM)
+Ciclo CRISP-DM
 
-### 1. Entendimento do Negócio
-* **Problema de Negócio:** [Ex: O time de retenção sofre com surpresas na saída de clientes recorrentes, sem tempo hábil para ações preventivas.]
-* **Objetivo:** [Ex: Prever com pelo menos 30 dias de antecedência quais clientes têm alta propensão ao cancelamento.]
-* **Solução Proposta:** Um modelo preditivo de Machine Learning integrado a um painel de BI atualizado diariamente para tomadas de decisão.
+Entendimento do Negócio
 
-### 2. Entendimento dos Dados
-* **Fontes:** Dados extraídos do CRM ([Nome do sistema]) e do banco de transações ERP.
-* **Análise Exploratória (EDA):** Identificação de distribuições, valores nulos e correlações iniciais. *(Os notebooks desta fase estão localizados em `notebooks/1_eda/`)*.
+Entendimento dos Dados
 
-### 3. Preparação dos Dados
-* **Limpeza e Tratamento:** Tratamento de dados faltantes, remoção de *outliers* e unificação de formatos de data.
-* **Engenharia de Recursos (Feature Engineering):** Criação de novas variáveis como tempo de contrato, frequência de uso recente e ticket médio histórico.
-* **Modelagem Dimensional (BI):** Estruturação das tabelas em formato **Star Schema** (Tabelas Fato e Dimensão) prontas para o consumo no BI.
+Preparação dos Dados
 
-### 4. Modelagem
-* **Algoritmos Testados:** Regressão Logística, Random Forest e [XGBoost / LightGBM].
-* **Abordagem:** Treinamento supervisionado com divisão da base em treino, validação e teste (proporção 70/15/15).
+Modelagem
 
-### 5. Avaliação
-* **Métricas do Modelo:** O modelo final alcançou uma **Acurácia de [X]%** e um **Recall de [Y]%** (foco em minimizar os falsos negativos).
-* **Métricas de BI / KPIs de Negócio:** 
-  * **[KPI 1, ex: Taxa de Churn]:** Taxa geral de cancelamento.
-  * **[KPI 2, ex: Receita em Risco (MRR)]:** O volume financeiro mapeado nas faixas de alta propensão do modelo.
+Avaliação
 
-### 6. Implantação
-* **Pipeline em Produção:** O script de predição roda de forma automatizada [ex: via Airflow / Cron] gerando novos scores de risco todas as noites.
-* **Camada de Visualização (BI):** Os resultados são disponibilizados em um painel interativo no **[Power BI / Tableau / Looker Studio]** com duas visões principais:
-  1. *Visão Executiva:* Tendências de mercado e comportamento macro de churn.
-  2. *Visão Operacional:* Tabela dinâmica com a lista de clientes ordenada por maior risco, permitindo ações imediatas.
+Implantação
 
----
+🛠️ Ciclo de Vida do Projeto (Fases do CRISP-DM)
 
-## 📁 Estrutura de Pastas (Mapeada pelo CRISP-DM)
+1. Entendimento do Negócio
 
-```text
-├── docs/                  # 1. Negócio: Dicionário de dados, atas e escopo do projeto
-├── notebooks/             # 2. Dados: Jupyter Notebooks de Análise Exploratória (EDA)
+Problema de Negócio: Empresas que realizam campanhas de Marketing Digital precisam acompanhar seus resultados para entender quais canais e estratégias geram melhores retornos. No estudo de caso do O Boticário, queremos analisar o desempenho das campanhas e identificar oportunidades para melhorar os investimentos em publicidade.
+
+Objetivo: Analisar os resultados das campanhas digitais e desenvolver um modelo capaz de estimar o número de conversões com base nas características dos anúncios.
+
+Solução Proposta: Utilizar análise exploratória de dados, indicadores de Marketing e um modelo de Machine Learning para apoiar a tomada de decisões. Os resultados serão organizados em um painel de indicadores.
+
+2. Entendimento dos Dados
+
+Fontes: Base de dados simulada, criada exclusivamente para este projeto acadêmico, contendo informações fictícias sobre campanhas de Marketing Digital.
+
+Variáveis analisadas: Canal de divulgação, investimento, impressões, cliques, conversões e receita.
+
+Análise Exploratória (EDA): Analisar o comportamento dos dados, identificar valores ausentes, possíveis inconsistências e relações entre os indicadores.
+
+Objetivo da etapa: Conhecer a estrutura da base e identificar informações importantes para as próximas fases.
+
+3. Preparação dos Dados
+
+Limpeza e Tratamento: Verificar dados ausentes, registros duplicados e possíveis erros nas informações.
+
+Transformação: Organizar os dados e padronizar os formatos das variáveis.
+
+Engenharia de Recursos (Feature Engineering): Criar indicadores como CTR, taxa de conversão, CPC e ROAS.
+
+Organização: Preparar a base para utilização nos modelos de análise e Machine Learning.
+
+4. Modelagem
+
+Algoritmos Testados: Regressão Linear e Random Forest.
+
+Abordagem: Utilizar aprendizado supervisionado para estimar o número de conversões das campanhas.
+
+Treinamento: Dividir os dados em conjuntos de treinamento e teste para avaliar o desempenho do modelo.
+
+Objetivo: Identificar qual abordagem apresenta melhores resultados na previsão de conversões.
+
+5. Avaliação
+
+Métricas do Modelo: Avaliar os resultados utilizando métricas como MAE, RMSE e R², adequadas para um problema de previsão numérica.
+
+Avaliação de Negócio: Verificar se os resultados ajudam a compreender o desempenho das campanhas e apoiam decisões de Marketing.
+
+Indicadores de Marketing (KPIs):
+
+CTR: Percentual de impressões que resultaram em cliques.
+
+CPC: Custo médio por clique.
+
+Taxa de Conversão: Percentual de cliques que resultaram em conversões.
+
+ROAS: Retorno sobre o investimento em anúncios.
+
+Receita: Valor gerado pelas campanhas.
+
+Os resultados numéricos serão apresentados após a execução e avaliação dos modelos.
+
+6. Implantação
+
+Aplicação dos Resultados: Organizar os resultados das análises em relatórios e indicadores que facilitem a interpretação dos dados.
+
+Camada de Visualização (BI): Propor um painel no Power BI para acompanhar o desempenho das campanhas.
+
+Visão Executiva: Apresentar os principais indicadores, investimentos e resultados por canal.
+
+Visão Analítica: Comparar campanhas, conversões, custos e retorno dos investimentos.
+
+A implantação será apresentada como uma proposta acadêmica, sem integração real aos sistemas internos do O Boticário.
+
+📁 Estrutura de Pastas
+
+├── docs/
+│   ├── dicionario_dados.md
+│   └── metricas_modelo.json
+│
+├── data/
+│   └── campanhas_marketing.csv
+│
+├── notebooks/
 │   ├── 1_eda/
 │   └── 2_testes_modelagem/
-├── src/                   # 3, 4 e 6. Scripts de Produção
-│   ├── data_prep.py       # Preparação e ETL
-│   ├── train_model.py     # Script de treinamento e tunagem
-│   └── predict.py         # Script de inferência diária para produção
-├── bi/                    # 6. Implantação: Arquivos e consultas SQL do Dashboard (.pbix, .twbx)
-├── requirements.txt       # Bibliotecas e dependências do projeto
-└── README.md              # Este arquivo
-```
-*Para abrir e editar a camada de BI, abra o arquivo localizado em `bi/[nome_do_painel].pbix` utilizando o [Power BI Desktop].*
+│
+├── src/
+│   ├── data_prep.py
+│   ├── train_model.py
+│   └── predict.py
+│
+├── bi/
+│   └── dashboard/
+│
+├── requirements.txt
+└── README.md
 
----
+Tecnologias utilizadas
 
-## 👥 Autores e Contato
+Python
 
-* **[Seu Nome]** - *Cientista de Dados / Analista de BI* - [Seu LinkedIn](https://linkedin.com)
+Pandas
+
+Matplotlib
+
+Scikit-learn
+
+Power BI
+
+GitHub
+
+👥 Autora e Contato
+
+Ana da Fonseca dos Santos — Estudante de Marketing.
+
+Observação: Este projeto possui finalidade exclusivamente acadêmica. Os dados utilizados são simulados e não representam informações oficiais ou resultados reais do O Boticário.
